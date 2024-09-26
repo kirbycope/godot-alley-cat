@@ -1,0 +1,3 @@
+[submodule "player3d"]
+	path = player3d
+	url = https://github.com/kirbycope/godot-3d-player-controller
