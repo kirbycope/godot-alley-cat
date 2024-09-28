@@ -1,6 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://4k88gc8ltwq8"]
-
-[ext_resource type="PackedScene" uid="uid://b80ulfowrgt55" path="res://addons/3d_player_controller/player_3d.tscn" id="1_n13jl"]
+[gd_scene load_steps=7 format=3 uid="uid://4k88gc8ltwq8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y5aho"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -17,6 +15,12 @@ tonemap_mode = 2
 [sub_resource type="BoxShape3D" id="BoxShape3D_65xxw"]
 size = Vector3(128, 0, 128)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1b1fe"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7plit"]
+material = SubResource("StandardMaterial3D_1b1fe")
+size = Vector2(128, 128)
+
 [node name="Main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -31,4 +35,5 @@ environment = SubResource("Environment_708qy")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_65xxw")
 
-[node name="Player3D" parent="." instance=ExtResource("1_n13jl")]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_7plit")
