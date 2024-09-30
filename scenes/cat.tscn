@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=4 uid="uid://b588ayt8gc3wk"]
 
-[ext_resource type="Texture2D" uid="uid://d4ihv1e2c5q2g" path="res://assets/Polydactyl/textures/Tex_Cat_B.png" id="1_6pfih"]
+[ext_resource type="Texture2D" uid="uid://d4ihv1e2c5q2g" path="res://assets/Polydactyl/Textures/Tex_Cat_B.png" id="1_6pfih"]
 [ext_resource type="Script" path="res://scenes/cat.gd" id="1_j5sej"]
 [ext_resource type="Script" path="res://addons/3d_player_controller/virtual_controller_3d.gd" id="2_kx80m"]
 
@@ -12,7 +12,6 @@ height = 0.5
 resource_name = "Material__Tex_Cat_B_png"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("1_6pfih")
 emission_enabled = true
 emission = Color(0.906332, 0.906332, 0.906332, 1)
@@ -22,7 +21,6 @@ emission_energy_multiplier = 0.0
 resource_name = "Material_004__Tex_Cat_B_png"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("1_6pfih")
 emission_enabled = true
 emission = Color(0.906332, 0.906332, 0.906332, 1)
