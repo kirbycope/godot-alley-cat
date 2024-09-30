@@ -4,12 +4,12 @@
 Alley Cat remade for the Godot Game Engine.
 
 ## Project Setup
-This project serves as an example of how to join a few concepts I have been working on; Addons, Game Packs, and Compatability Builds.
+This project serves as an example of how to join a few concepts I have been working on; [Addons](https://docs.godotengine.org/en/stable/tutorials/plugins/index.html), [Game Packs](https://docs.godotengine.org/en/stable/tutorials/export/exporting_pcks.html), and [Compatability Builds](https://docs.godotengine.org/en/stable/contributing/development/core_and_modules/internal_rendering_architecture.html#compatibility).
 
 ### Addons
 This project uses the [godot-3d-player-controller](https://github.com/kirbycope/godot-3d-player-controller). That addon requires an auto-load, [Globals.gd](https://github.com/kirbycope/godot-3d-player-controller/blob/main/scenes/globals.gd).
 
-### Installing the Addon
+#### Install the Addons
 1. Download [install-3d-player-controller.sh](ci/install-3d-player-controller.sh)
 1. Move the file to a folder names `ci` in your project
 1. Open your project in VS Code
@@ -18,7 +18,7 @@ This project uses the [godot-3d-player-controller](https://github.com/kirbycope/
     - This script will download the [3d_player_controller](/addons/3d_player_controller) folder from _this_ repo and then cleanup the `.git` files/folders.
 
 ## Game Pack
-This game can be [exported](https://docs.godotengine.org/en/stable/tutorials/export/exporting_pcks.html#generating-pck-files) as a `.pck` and [imported](https://docs.godotengine.org/en/stable/tutorials/export/exporting_pcks.html#opening-pck-files-at-runtime) into another Godot game client. Download the [pack](ci/godot-alley-cat.pck).
+This game can be [exported](https://docs.godotengine.org/en/stable/tutorials/export/exporting_pcks.html#generating-pck-files) as a `.pck` and [imported](https://docs.godotengine.org/en/stable/tutorials/export/exporting_pcks.html#opening-pck-files-at-runtime) into another Godot game client.
 
 ### Export Game as Pack
 1. Select "Project" > "Export.."
@@ -36,9 +36,9 @@ This game can be [exported](https://docs.godotengine.org/en/stable/tutorials/exp
 1. Run the following command, `bash ci/export-pack.sh`
 
 ## Web Host
-This game can be hosted on GitHub Pages. Play it at [timothycope.com/godot-alley-cat/](https://timothycope.com/godot-alley-cat/).
+This game can be hosted on GitHub Pages.
 
-### Setting Up GitHub Pages
+### Set Up GitHub Pages
 Note: This only needs to be done once.
 1. Go to the "Settings" tab of the repo
 1. Select "Pages" from left-nav
@@ -47,7 +47,7 @@ Note: This only needs to be done once.
 1. On the main page of the GitHub repo, click the gear icon next to "About"
 1. Select "Use your GitHub Pages website", then select "Save changes"
 
-### Setting Up Godot
+### Set Up Godot
 Note: This only needs to be done once.</br>
 The following is needed to work with GitHub Pages.
 1. Select "Project" > "Export..."
@@ -56,7 +56,7 @@ The following is needed to work with GitHub Pages.
 1. For "Head Include", enter `<script src="coi-serviceworker.js"></script>`
 1. Download [coi.js](https://github.com/gzuidhof/coi-serviceworker/raw/master/coi-serviceworker.js) and add it to the `/docs` directory
 
-### Exporting to Web
+### Export Game as Web App
 1. Select "Project" > "Export..."
 1. Select the preset "Web (Runnable)"
 1. Select "Export Project..."
@@ -65,6 +65,13 @@ The following is needed to work with GitHub Pages.
 1. Enter `index.html`
 1. Select "Save"
 1. Commit the code to trigger a GitHub Pages deployment (above)
+
+
+### Export Game as Web App Using Bash
+1. Open the root folder using [VS Code](https://code.visualstudio.com/)
+    - If you use GitHub Desktop, select the "Open in Visual Studio" button
+1. Open the [integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal) using the "Git Bash" profile
+1. Run the following command, `bash ci/export-web.sh`
 
 ---
 
