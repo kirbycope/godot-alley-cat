@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=4 uid="uid://b588ayt8gc3wk"]
 
 [ext_resource type="Texture2D" uid="uid://d4ihv1e2c5q2g" path="res://assets/Polydactyl/Textures/Tex_Cat_B.png" id="1_6pfih"]
-[ext_resource type="Script" path="res://scenes/cat.gd" id="1_j5sej"]
+[ext_resource type="Script" path="res://scenes/player/cat.gd" id="1_j5sej"]
 [ext_resource type="Script" path="res://addons/3d_player_controller/virtual_controller_3d.gd" id="2_kx80m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tg4ev"]
