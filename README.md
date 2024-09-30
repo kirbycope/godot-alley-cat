@@ -5,12 +5,12 @@ Alley Cat remade for the Godot Game Engine.
 This project serves as an example of how to join a few concepts I have been working on; Addons, Game Packs, and Compatability Builds.
 
 ### Addons
-This project uses the [godot-3d-player-controller](https://github.com/kirbycope/godot-3d-player-controller)
+This project uses the [godot-3d-player-controller](https://github.com/kirbycope/godot-3d-player-controller). That addon requires an auto-load, [Globals.gd](https://github.com/kirbycope/godot-3d-player-controller/blob/main/scenes/globals.gd).
 1. Open the root folder using [VS Code](https://code.visualstudio.com/)
     - If you use GitHub Desktop, select the "Open in Visual Studio" button
 1. Open the [integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal)
-1. Run the following command, `. ".\ci\install-addons.ps1"`
-	- Note that this addon requires an auto-load, [Globals.gd](https://github.com/kirbycope/godot-3d-player-controller/blob/main/scenes/globals.gd)
+1. Open a new terminal window using the "Git Bash" profile
+1. Run the following command, `bash ci/install-3d-player-controller.sh`
 
 ## Game Pack
 This game can be [exported](https://docs.godotengine.org/en/stable/tutorials/export/exporting_pcks.html#generating-pck-files) as a `.pck` and [imported](https://docs.godotengine.org/en/stable/tutorials/export/exporting_pcks.html#opening-pck-files-at-runtime) into another Godot game client. Download the [pack](ci\godot-minecraft.pck).
