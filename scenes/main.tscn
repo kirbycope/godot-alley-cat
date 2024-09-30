@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://4k88gc8ltwq8"]
+[gd_scene load_steps=8 format=3 uid="uid://4k88gc8ltwq8"]
+
+[ext_resource type="PackedScene" uid="uid://b588ayt8gc3wk" path="res://scenes/cat.tscn" id="1_m70mu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y5aho"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -37,3 +39,5 @@ shape = SubResource("BoxShape3D_65xxw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("PlaneMesh_7plit")
+
+[node name="Player3D" parent="." instance=ExtResource("1_m70mu")]
