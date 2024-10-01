@@ -61,22 +61,22 @@ shape = SubResource("BoxShape3D_5hadr")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -12.4744)
 
 [node name="TrashCan1" parent="." instance=ExtResource("2_anyfu")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.2, 0.08, -11.8)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.2, 0.08, -11.8)
 
 [node name="TrashCan2" parent="." instance=ExtResource("2_anyfu")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1, 0.08, -11.8)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1, 0.08, -11.8)
 
 [node name="TrashCan3" parent="." instance=ExtResource("2_anyfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 0.08, -11.8)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.7, 0.08, -11.8)
 
 [node name="TrashCan4" parent="." instance=ExtResource("2_anyfu")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.4, 0.08, -11.8)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 2.4, 0.08, -11.8)
 
 [node name="TrashCan5" parent="." instance=ExtResource("2_anyfu")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -1.2, 0.08, -11.8)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.2, 0.08, -11.8)
 
 [node name="TrashCan6" parent="." instance=ExtResource("2_anyfu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9, 0.08, -11.8)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -1.9, 0.08, -11.8)
 
 [node name="Fence" type="Node3D" parent="."]
 transform = Transform3D(-1, -1.51808e-08, 8.60946e-08, 0, 0.984808, 0.173648, -8.74228e-08, 0.173648, -0.984808, 0, 1.5, -14)
