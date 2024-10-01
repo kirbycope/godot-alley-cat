@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5s1j0wg7agu5"]
+
+[ext_resource type="PackedScene" uid="uid://0vj8v40fbty8" path="res://assets/CartoonLowPolyCityLite/House_01.fbx" id="1_jheum"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bv16h"]
+size = Vector3(7, 11, 5.2)
+
+[node name="House01" type="StaticBody3D"]
+transform = Transform3D(0.6, 0, 0, 0, 0.32, 0, 0, 0, 0.4, 0, 0, 0)
+
+[node name="House_01" parent="." instance=ExtResource("1_jheum")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0932541, 4.98972, -0.0159912)
+shape = SubResource("BoxShape3D_bv16h")
