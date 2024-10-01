@@ -7,7 +7,6 @@
 resource_name = "Material__Tex_Cat_B_png"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("1_47xh5")
 emission_enabled = true
 emission = Color(0.906332, 0.906332, 0.906332, 1)
@@ -17,7 +16,6 @@ emission_energy_multiplier = 0.0
 resource_name = "Material_004__Tex_Cat_B_png"
 transparency = 4
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("1_47xh5")
 emission_enabled = true
 emission = Color(0.906332, 0.906332, 0.906332, 1)

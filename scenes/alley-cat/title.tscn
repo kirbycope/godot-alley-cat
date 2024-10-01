@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://bppb7xquhc6kl"]
+[gd_scene load_steps=16 format=3 uid="uid://bppb7xquhc6kl"]
 
 [ext_resource type="PackedScene" uid="uid://dxo1gw1swwr20" path="res://scenes/alley-cat/fence_type_4.tscn" id="1_ljy8s"]
 [ext_resource type="Script" path="res://scenes/alley-cat/title.gd" id="1_s4p0h"]
 [ext_resource type="FontFile" uid="uid://bw2bd4mmj7c80" path="res://assets/fonts/MIB.ttf" id="2_fujft"]
 [ext_resource type="PackedScene" uid="uid://x5047a8f7och" path="res://scenes/alley-cat/cat.tscn" id="2_yrpda"]
 [ext_resource type="FontFile" uid="uid://deqcb62up31kk" path="res://assets/fonts/Film Premieres.otf" id="3_uuxut"]
+[ext_resource type="FontFile" uid="uid://o3mjwhfuqlpm" path="res://assets/fonts/Ryan Signature.ttf" id="4_0m313"]
 [ext_resource type="PackedScene" uid="uid://0lix1shdvs46" path="res://scenes/alley-cat/trash_can_1.tscn" id="4_75mta"]
+[ext_resource type="FontFile" uid="uid://2mpfyjy44r0h" path="res://assets/fonts/Four Signature.ttf" id="5_4xk1k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0i86v"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -26,6 +28,13 @@ albedo_color = Color(0.596078, 0.121569, 0.643137, 1)
 material = SubResource("StandardMaterial3D_j1m1d")
 size = Vector2(16, 9)
 orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_srhjj"]
+albedo_color = Color(0.596078, 0.121569, 0.643137, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_01wxo"]
+material = SubResource("StandardMaterial3D_srhjj")
+size = Vector2(16, 9)
 
 [node name="Title" type="Node3D"]
 script = ExtResource("1_s4p0h")
@@ -71,9 +80,68 @@ theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "[center]PRESENTS[/center]"
 
+[node name="RichTextLabel3" type="RichTextLabel" parent="Camera3D/CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -578.0
+offset_top = 124.0
+offset_right = 578.0
+offset_bottom = 159.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0.164706, 0.164706, 0.164706, 1)
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[center][b]TM[/b][/center]"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Camera3D/CanvasLayer"]
+offset_left = 60.0
+offset_top = 128.0
+offset_right = 560.0
+offset_bottom = 256.0
+theme_override_colors/default_color = Color(0.658824, 0.658824, 0.658824, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("4_0m313")
+theme_override_font_sizes/normal_font_size = 96
+bbcode_enabled = true
+text = "[center]Alley Cat[/center]"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Camera3D/CanvasLayer"]
+offset_left = 630.0
+offset_top = 160.0
+offset_right = 883.0
+offset_bottom = 295.0
+theme_override_colors/default_color = Color(0.164706, 0.164706, 0.164706, 1)
+theme_override_fonts/bold_font = ExtResource("5_4xk1k")
+theme_override_font_sizes/bold_font_size = 64
+bbcode_enabled = true
+text = "[b]By
+Bill Williams[/b]"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Camera3D/CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -214.0
+offset_top = -46.0
+offset_right = 214.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "© Copyright SunSoft™ 1984"
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.85581e-07, 0, 6.53333)
 mesh = SubResource("PlaneMesh_vitv7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.85581e-07, -1, 6.53333)
+mesh = SubResource("PlaneMesh_01wxo")
 
 [node name="Fence" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
