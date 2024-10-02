@@ -91,7 +91,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_krv4g"]
-size = Vector3(0.4, 0.65, 0.4)
+size = Vector3(0.47, 0.65, 0.47)
 
 [node name="TrashCan1" type="StaticBody3D"]
 
@@ -116,5 +116,5 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.325, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0103638, 0.325, 0.00717773)
 shape = SubResource("BoxShape3D_krv4g")

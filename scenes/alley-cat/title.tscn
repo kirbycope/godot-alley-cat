@@ -26,7 +26,7 @@ albedo_color = Color(0.596078, 0.121569, 0.643137, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vitv7"]
 material = SubResource("StandardMaterial3D_j1m1d")
-size = Vector2(16, 9)
+size = Vector2(32, 18)
 orientation = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_srhjj"]
@@ -34,7 +34,7 @@ albedo_color = Color(0.596078, 0.121569, 0.643137, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_01wxo"]
 material = SubResource("StandardMaterial3D_srhjj")
-size = Vector2(16, 9)
+size = Vector2(32, 18)
 
 [node name="Title" type="Node3D"]
 script = ExtResource("1_s4p0h")
