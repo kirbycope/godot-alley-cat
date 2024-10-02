@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://4k88gc8ltwq8"]
+[gd_scene load_steps=17 format=3 uid="uid://4k88gc8ltwq8"]
 
 [ext_resource type="Script" path="res://scenes/alley-cat/alley.gd" id="1_3viqq"]
 [ext_resource type="PackedScene" uid="uid://b588ayt8gc3wk" path="res://scenes/player/player_3d.tscn" id="2_rbv1v"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ctstfivo80637" path="res://scenes/alley-cat/road_02.tscn" id="5_07pqf"]
 [ext_resource type="PackedScene" uid="uid://ip407jw2rjuk" path="res://scenes/alley-cat/road_10.tscn" id="6_khmhs"]
 [ext_resource type="PackedScene" uid="uid://b5s1j0wg7agu5" path="res://scenes/alley-cat/house_01.tscn" id="7_4uqoo"]
+[ext_resource type="PackedScene" uid="uid://drvd368vm7qag" path="res://scenes/alley-cat/fish.tscn" id="8_ajr37"]
+[ext_resource type="PackedScene" uid="uid://bxv6c36xm0gpg" path="res://scenes/alley-cat/bone.tscn" id="9_44s6e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y5aho"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -228,3 +230,9 @@ transform = Transform3D(0.6, 0, 0, 0, 0.32, 0, 0, 0, 0.4, 0.8, 0.725, -10.1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0976076, 0.4, -10.0902)
 material_override = SubResource("StandardMaterial3D_v2tuj")
 size = Vector3(5.60478, 0.8, 2.20053)
+
+[node name="Fish" parent="." instance=ExtResource("8_ajr37")]
+transform = Transform3D(0.850206, -0.0877368, -0.519088, 0.0937643, 0.995486, -0.0146827, 0.518033, -0.0361885, 0.854595, -0.7, 0.0910269, -12.1482)
+
+[node name="Bone" parent="." instance=ExtResource("9_44s6e")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -0.3, 0.0919858, -12)
