@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkp50gl2r8q6h"
-path.s3tc="res://.godot/imported/Texture_01.png-11bfb83b74dbf1db596d9331f6ace1dc.s3tc.ctex"
+path.s3tc="res://.godot/imported/Texture_01.png-ff9698308976e48f78e25dfe20330d31.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/CartoonLowPolyCityLite/textures/Texture_01.png"
-dest_files=["res://.godot/imported/Texture_01.png-11bfb83b74dbf1db596d9331f6ace1dc.s3tc.ctex"]
+source_file="res://assets/CartoonLowPolyCityLite/Textures/Texture_01.png"
+dest_files=["res://.godot/imported/Texture_01.png-ff9698308976e48f78e25dfe20330d31.s3tc.ctex"]
 
 [params]
 
