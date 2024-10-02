@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tg4ev"]
 radius = 0.2
-height = 0.5
+height = 0.4
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d8x8s"]
 resource_name = "Material__Tex_Cat_B_png"
@@ -5611,13 +5611,13 @@ script = ExtResource("1_j5sej")
 script = ExtResource("2_kx80m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.2, 0)
+transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.56, 0, 0.7, -2.44784e-08, 0, 0.11, 0)
 shape = SubResource("CapsuleShape3D_tg4ev")
 
 [node name="Visuals" type="Node3D" parent="."]
 
 [node name="AuxScene" type="Node3D" parent="Visuals"]
-transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0, 0, 0)
+transform = Transform3D(-0.05, 0, -7.54979e-09, 0, 0.05, 0, 7.54979e-09, 0, -0.05, 0, 0, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Visuals/AuxScene"]
 bones/0/name = "Rig_Cat"

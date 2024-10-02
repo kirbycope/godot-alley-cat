@@ -54,12 +54,12 @@ var timer_jump: float = 0.0
 @export var perspective: int = 0
 @export var player_crawling_speed: float = 0.75
 @export var player_current_speed: float = 3.0
-@export var player_jump_velocity: float = 3.0
+@export var player_jump_velocity: float = 3.1
 @export var player_fast_flying_speed: float = 10.0
 @export var player_flying_speed: float = 5.0
-@export var player_running_speed: float = 3.5
-@export var player_sprinting_speed: float = 5.0
-@export var player_walking_speed: float = 1.0
+@export var player_running_speed: float = 1.0
+@export var player_sprinting_speed: float = 1.5
+@export var player_walking_speed: float = 0.5
 
 # Note: `@onready` variables are set when the scene is loaded.
 @onready var animation_player = $Visuals/AuxScene/AnimationPlayer
@@ -551,6 +551,8 @@ func mangage_state() -> void:
 			is_double_jumping = false
 			# Flag the player as "jumping"
 			is_jumping = true
+			# play the jump animation
+			animation_player.play("Jump", -1, 2.0, false)
 	
 	# The player should not be on a floor and not flying
 	else:
