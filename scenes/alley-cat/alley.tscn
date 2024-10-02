@@ -1,14 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://4k88gc8ltwq8"]
+[gd_scene load_steps=20 format=3 uid="uid://4k88gc8ltwq8"]
 
 [ext_resource type="Script" path="res://scenes/alley-cat/alley.gd" id="1_3viqq"]
 [ext_resource type="PackedScene" uid="uid://b588ayt8gc3wk" path="res://scenes/player/player_3d.tscn" id="2_rbv1v"]
 [ext_resource type="PackedScene" uid="uid://0lix1shdvs46" path="res://scenes/alley-cat/trash_can_1.tscn" id="3_qb571"]
 [ext_resource type="PackedScene" uid="uid://dxo1gw1swwr20" path="res://scenes/alley-cat/fence_type_4.tscn" id="4_nftaj"]
 [ext_resource type="PackedScene" uid="uid://ctstfivo80637" path="res://scenes/alley-cat/road_02.tscn" id="5_07pqf"]
+[ext_resource type="PackedScene" uid="uid://dnadvfi68gelr" path="res://scenes/alley-cat/garbage_truck.tscn" id="5_unkld"]
 [ext_resource type="PackedScene" uid="uid://ip407jw2rjuk" path="res://scenes/alley-cat/road_10.tscn" id="6_khmhs"]
 [ext_resource type="PackedScene" uid="uid://b5s1j0wg7agu5" path="res://scenes/alley-cat/house_01.tscn" id="7_4uqoo"]
 [ext_resource type="PackedScene" uid="uid://drvd368vm7qag" path="res://scenes/alley-cat/fish.tscn" id="8_ajr37"]
 [ext_resource type="PackedScene" uid="uid://bxv6c36xm0gpg" path="res://scenes/alley-cat/bone.tscn" id="9_44s6e"]
+[ext_resource type="Script" path="res://scenes/alley-cat/path_follow_3d.gd" id="10_00vhm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y5aho"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -35,11 +37,18 @@ size = Vector3(9.2, 0, 9.2)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v2tuj"]
 albedo_color = Color(0.396078, 0.247059, 0.184314, 1)
 
+[sub_resource type="Curve3D" id="Curve3D_ncabj"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0, 0, -6.5, 0, 0.5, 0, 0, 0, 0, 0, 0, -6.5, 0, -13, 0, 0, 0, 0, 0, 0, 6.5, 0, -13, 0, 0, 0, 0, 0, 0, 6.5, 0, 0.5),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
 [node name="Alley" type="Node3D"]
 script = ExtResource("1_3viqq")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.1552, -13.8082)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.1552, -13.8082)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -60,25 +69,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
 shape = SubResource("BoxShape3D_5hadr")
 
 [node name="Player3D" parent="." instance=ExtResource("2_rbv1v")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -12.4744)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.1, -12.1744)
 
 [node name="TrashCan1" parent="." instance=ExtResource("3_qb571")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.2, 0.08, -11.8)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.2, 0.08, -11.7)
 
 [node name="TrashCan2" parent="." instance=ExtResource("3_qb571")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1, 0.08, -11.8)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1, 0.08, -11.7)
 
 [node name="TrashCan3" parent="." instance=ExtResource("3_qb571")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.7, 0.08, -11.8)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 1.7, 0.08, -11.7)
 
 [node name="TrashCan4" parent="." instance=ExtResource("3_qb571")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 2.4, 0.08, -11.8)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 2.4, 0.08, -11.7)
 
 [node name="TrashCan5" parent="." instance=ExtResource("3_qb571")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.2, 0.08, -11.8)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.2, 0.08, -11.7)
 
 [node name="TrashCan6" parent="." instance=ExtResource("3_qb571")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -1.9, 0.08, -11.8)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -1.9, 0.08, -11.7)
+
+[node name="Fish" parent="." instance=ExtResource("8_ajr37")]
+transform = Transform3D(0.850206, -0.0877368, -0.519088, 0.0937643, 0.995486, -0.0146827, 0.518033, -0.0361885, 0.854595, -0.7, 0.0910269, -12.1482)
+
+[node name="Bone" parent="." instance=ExtResource("9_44s6e")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -0.3, 0.0919858, -12)
 
 [node name="Fence" type="Node3D" parent="."]
 transform = Transform3D(-1, -1.51808e-08, 8.60946e-08, 0, 0.984808, 0.173648, -8.74228e-08, 0.173648, -0.984808, 0, 1.5, -14)
@@ -231,8 +246,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0976076, 0.4, -10.0902)
 material_override = SubResource("StandardMaterial3D_v2tuj")
 size = Vector3(5.60478, 0.8, 2.20053)
 
-[node name="Fish" parent="." instance=ExtResource("8_ajr37")]
-transform = Transform3D(0.850206, -0.0877368, -0.519088, 0.0937643, 0.995486, -0.0146827, 0.518033, -0.0361885, 0.854595, -0.7, 0.0910269, -12.1482)
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_ncabj")
 
-[node name="Bone" parent="." instance=ExtResource("9_44s6e")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -0.3, 0.0919858, -12)
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0.5)
+script = ExtResource("10_00vhm")
+
+[node name="GarbageTruck" parent="Path3D/PathFollow3D" instance=ExtResource("5_unkld")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
