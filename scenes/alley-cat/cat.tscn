@@ -5601,7 +5601,7 @@ _data = {
 script = ExtResource("1_857hh")
 
 [node name="AuxScene" type="Node3D" parent="."]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="AuxScene"]
 bones/0/name = "Rig_Cat"
