@@ -45,6 +45,7 @@ autowrap_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="Panel/Panel"]
 modulate = Color(0.969137, 0.969137, 0.969137, 1)
+layout_mode = 0
 offset_left = 165.0
 offset_top = 1.0
 offset_right = 197.0
@@ -54,6 +55,7 @@ expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Panel/Panel"]
 modulate = Color(0.969137, 0.969137, 0.969137, 1)
+layout_mode = 0
 offset_left = 3.0
 offset_top = 1.0
 offset_right = 35.0

@@ -2,6 +2,7 @@ extends Node3D
 
 var swipe_start: Vector2
 var swipe_threshold := 50.0
+var tap_count: int = 0
 var tap_time_threshold := 0.3
 var tap_start_time: float = 0.0
 
@@ -44,8 +45,12 @@ func _input(event: InputEvent) -> void:
 			var tap_duration = Time.get_ticks_msec() / 1000.0 - tap_start_time
 			# [tap] touch just _released_
 			if swipe_delta.length() < swipe_threshold and tap_duration < tap_time_threshold:
-				# Start the game
-				Globals.main.start()
+				# Increment the tap counter
+				tap_count += 1
+				# If this is the second tap, enter the game (first tap = focus)
+				if tap_count >= 2:
+					# Start the game
+					Globals.main.start()
 
 	# Check if the game is no started
 	if !Globals.main.game_started:

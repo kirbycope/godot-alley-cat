@@ -20,12 +20,12 @@ func _process(_delta) -> void:
 	# Toggle mouse capture
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if Globals.game_paused else Input.MOUSE_MODE_CAPTURED)
 
+	# Display pause menu?
+	visible = Globals.game_paused
+
 
 ## Close the pause menu
 func _on_back_to_game_button_pressed() -> void:
-
-	# Hide the pause menu
-	visible = false
 
 	# Unpause the game
 	Globals.game_paused = false

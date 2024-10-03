@@ -1,8 +1,10 @@
-[gd_scene load_steps=24 format=4 uid="uid://b588ayt8gc3wk"]
+[gd_scene load_steps=26 format=4 uid="uid://b588ayt8gc3wk"]
 
 [ext_resource type="Texture2D" uid="uid://d4ihv1e2c5q2g" path="res://assets/Polydactyl/Textures/Tex_Cat_B.png" id="1_6pfih"]
 [ext_resource type="Script" path="res://scenes/player/player_3d.gd" id="1_j5sej"]
 [ext_resource type="Script" path="res://addons/3d_player_controller/virtual_controller_3d.gd" id="2_kx80m"]
+[ext_resource type="Texture2D" uid="uid://b531o75la4vme" path="res://assets/freepik/paw.svg" id="3_k10go"]
+[ext_resource type="Script" path="res://scenes/player/paws_button.gd" id="4_7fljf"]
 [ext_resource type="PackedScene" uid="uid://b4a0mne2ofpql" path="res://scenes/alley-cat/pause.tscn" id="4_n7ldl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d8x8s"]
@@ -5611,6 +5613,20 @@ script = ExtResource("1_j5sej")
 [node name="VirtualController3D" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("2_kx80m")
 
+[node name="PawsButton" type="TextureButton" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.490196)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -46.0
+offset_top = 9.0
+offset_right = 74.0
+offset_bottom = 132.0
+grow_horizontal = 0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_k10go")
+script = ExtResource("4_7fljf")
+
 [node name="Visuals" type="Node3D" parent="."]
 
 [node name="AuxScene" type="Node3D" parent="Visuals"]
@@ -5961,3 +5977,5 @@ visible = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-0.05, 4.37114e-09, 0, 1.91069e-16, 2.18557e-09, -0.05, -4.37114e-09, -0.05, -2.18557e-09, 0, 0.05, 0)
 shape = SubResource("CapsuleShape3D_2ityb")
+
+[connection signal="pressed" from="CanvasLayer/PawsButton" to="CanvasLayer/PawsButton" method="_on_pressed"]
