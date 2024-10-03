@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4a0mne2ofpql"]
+[gd_scene load_steps=6 format=3 uid="uid://b4a0mne2ofpql"]
 
 [ext_resource type="Script" path="res://scenes/alley-cat/pause.gd" id="1_8tmps"]
 [ext_resource type="Texture2D" uid="uid://b531o75la4vme" path="res://assets/freepik/paw.svg" id="2_8ns4h"]
+[ext_resource type="Shader" path="res://scenes/alley-cat/paws.gdshader" id="2_hpk1l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ciq8x"]
+shader = ExtResource("2_hpk1l")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2bqjo"]
+shader = ExtResource("2_hpk1l")
 
 [node name="Pause" type="Control"]
 layout_mode = 3
@@ -31,6 +38,17 @@ layout_mode = 0
 offset_right = 200.0
 offset_bottom = 34.0
 
+[node name="TextureRect1" type="TextureRect" parent="Panel/Panel"]
+modulate = Color(0.969137, 0.969137, 0.969137, 1)
+material = SubResource("ShaderMaterial_ciq8x")
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 35.0
+offset_bottom = 33.0
+texture = ExtResource("2_8ns4h")
+expand_mode = 1
+
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel/Panel"]
 layout_mode = 0
 offset_right = 200.0
@@ -43,22 +61,13 @@ scroll_active = false
 scroll_following = true
 autowrap_mode = 0
 
-[node name="TextureRect" type="TextureRect" parent="Panel/Panel"]
+[node name="TextureRect2" type="TextureRect" parent="Panel/Panel"]
 modulate = Color(0.969137, 0.969137, 0.969137, 1)
+material = SubResource("ShaderMaterial_2bqjo")
 layout_mode = 0
 offset_left = 165.0
 offset_top = 1.0
 offset_right = 197.0
-offset_bottom = 33.0
-texture = ExtResource("2_8ns4h")
-expand_mode = 1
-
-[node name="TextureRect2" type="TextureRect" parent="Panel/Panel"]
-modulate = Color(0.969137, 0.969137, 0.969137, 1)
-layout_mode = 0
-offset_left = 3.0
-offset_top = 1.0
-offset_right = 35.0
 offset_bottom = 33.0
 texture = ExtResource("2_8ns4h")
 expand_mode = 1
