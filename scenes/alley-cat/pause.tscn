@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4a0mne2ofpql"]
+[gd_scene load_steps=3 format=3 uid="uid://b4a0mne2ofpql"]
 
 [ext_resource type="Script" path="res://scenes/alley-cat/pause.gd" id="1_8tmps"]
+[ext_resource type="Texture2D" uid="uid://b531o75la4vme" path="res://assets/freepik/paw.svg" id="2_8ns4h"]
 
 [node name="Pause" type="Control"]
 layout_mode = 3
@@ -36,11 +37,29 @@ offset_right = 200.0
 offset_bottom = 34.0
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
-text = "[center]🐾 PAWS 🐾[/center]"
+text = "[center]PAWS[/center]"
 fit_content = true
 scroll_active = false
 scroll_following = true
 autowrap_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Panel"]
+modulate = Color(0.969137, 0.969137, 0.969137, 1)
+offset_left = 165.0
+offset_top = 1.0
+offset_right = 197.0
+offset_bottom = 33.0
+texture = ExtResource("2_8ns4h")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/Panel"]
+modulate = Color(0.969137, 0.969137, 0.969137, 1)
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 35.0
+offset_bottom = 33.0
+texture = ExtResource("2_8ns4h")
+expand_mode = 1
 
 [node name="BackToGameButton" type="TextureButton" parent="Panel"]
 layout_mode = 0
