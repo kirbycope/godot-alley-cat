@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://4k88gc8ltwq8"]
+[gd_scene load_steps=23 format=3 uid="uid://4k88gc8ltwq8"]
 
 [ext_resource type="Script" path="res://scenes/alley-cat/alley.gd" id="1_3viqq"]
 [ext_resource type="PackedScene" uid="uid://b588ayt8gc3wk" path="res://scenes/player/player_3d.tscn" id="2_rbv1v"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scenes/alley-cat/path_follow_3d.gd" id="10_00vhm"]
 [ext_resource type="PackedScene" uid="uid://bcb07a1lldcvf" path="res://scenes/alley-cat/clothes_rope_01.tscn" id="10_uejnh"]
 [ext_resource type="PackedScene" uid="uid://b44r78ilddmln" path="res://scenes/alley-cat/clothes_rope_02.tscn" id="11_2cykv"]
+[ext_resource type="PackedScene" uid="uid://cvy2gntva12jl" path="res://scenes/alley-cat/jack_russell_terrier.tscn" id="14_kp6o8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y5aho"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -329,3 +330,6 @@ script = ExtResource("10_00vhm")
 
 [node name="GarbageTruck" parent="Path3D/PathFollow3D" instance=ExtResource("5_unkld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+
+[node name="JackRussellTerrier" parent="." instance=ExtResource("14_kp6o8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.8, 0.0795451, -12)
