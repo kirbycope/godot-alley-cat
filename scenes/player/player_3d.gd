@@ -65,7 +65,7 @@ var timer_jump: float = 0.0
 @onready var animation_player = $Visuals/AuxScene/AnimationPlayer
 @onready var camera_mount = $CameraMount
 @onready var camera = $CameraMount/Camera3D
-@onready var player_skeleton = $Visuals/AuxScene/Node/Skeleton3D
+#@onready var player_skeleton = $Visuals/AuxScene/Node/Skeleton3D
 @onready var raycast_jumptarget = $Visuals/RayCast3D_JumpTarget
 @onready var raycast_top = $Visuals/RayCast3D_InFrontPlayer_Top
 @onready var raycast_high = $Visuals/RayCast3D_InFrontPlayer_High
@@ -602,12 +602,12 @@ func move_camera():
 	# Check if in "first person" perspective
 	if perspective == 1:
 		var bone_name = "mixamorigHead"
-		var bone_index = player_skeleton.find_bone(bone_name)
+		#var bone_index = player_skeleton.find_bone(bone_name)
 		# Get the overall transform of the specified bone, with respect to the player's skeleton.
-		var bone_pose = player_skeleton.get_bone_global_pose(bone_index)
+		#var bone_pose = player_skeleton.get_bone_global_pose(bone_index)
 		# Adjust the camera mount position to match the bone's relative position (adjusting for $Visuals/AuxScene scaling)
-		camera_mount.position = Vector3(-bone_pose.origin.x * 0.01, bone_pose.origin.y * 0.01, (-bone_pose.origin.z * 0.01) - 0.165)
-
+		#camera_mount.position = Vector3(-bone_pose.origin.x * 0.01, bone_pose.origin.y * 0.01, (-bone_pose.origin.z * 0.01) - 0.165)
+		pass
 
 ## Sets the player's idle animation based on status.
 func set_player_idle_animation() -> void:
@@ -650,7 +650,8 @@ func set_player_idle_animation() -> void:
 		# Check if the current animation is not a jumping one
 		if animation_player.current_animation not in animations_jumping:
 			# Play the idle "Falling" animation
-			animation_player.play(falling_idle)
+			#animation_player.play(falling_idle)
+			pass
 	# The player should be "idle"
 	else:
 		# Check if the current animation is still a jumping one
