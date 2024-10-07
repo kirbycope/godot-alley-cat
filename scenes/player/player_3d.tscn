@@ -5605,7 +5605,7 @@ _data = {
 radius = 1.0
 height = 4.0
 
-[node name="Player3D" type="CharacterBody3D"]
+[node name="Player3D" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_j5sej")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

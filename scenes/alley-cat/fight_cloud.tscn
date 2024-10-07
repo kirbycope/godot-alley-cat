@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpwt28ag6ieag"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_tre7r"]
+radius = 0.1
+height = 0.2
+
+[node name="FightCloud" type="CPUParticles3D"]
+amount = 96
+lifetime = 0.4
+explosiveness = 0.2
+randomness = 0.2
+mesh = SubResource("SphereMesh_tre7r")
+emission_shape = 3
+emission_box_extents = Vector3(0.2, 0.2, 0.2)
+gravity = Vector3(0, 0, 0)

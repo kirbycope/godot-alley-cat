@@ -1,6 +1,8 @@
 extends Node3D
 
 @onready var animation_player = $Lowpoly_JR_Terrier_RM/AnimationPlayer
+@onready var fight_cloud = $FightCloud
+
 var initial_position = null
 var tween = null
 
@@ -9,7 +11,6 @@ var tween = null
 func _ready() -> void:
 	initial_position = position
 	reset_position()
-
 
 func _on_timer_timeout() -> void:
 	Globals.play_sound("res://assets/sounds/160092__jorickhoofd__dog-bark-1.wav")
@@ -22,5 +23,12 @@ func _on_timer_timeout() -> void:
 
 func reset_position() -> void:
 	animation_player.play("Arm_Dog|idle_1")
+	fight_cloud.emitting = false
 	position = initial_position
 	tween = null
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		fight_cloud.emitting = true
+		tween.kill()
