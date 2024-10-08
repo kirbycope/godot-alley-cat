@@ -31,6 +31,11 @@ var time_stamp: String:
 		return return_value + "Z" if time_stamp_utc else return_value
 
 
+func get_player():
+	var player = get_parent().find_child("Player3D", true, false)
+	return player
+
+
 ## Gets the scene by the path's concatenated name.
 func get_node_by_path_name(concatenated_name: String):
 	var children = get_tree().root.get_children()
