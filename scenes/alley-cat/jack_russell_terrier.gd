@@ -31,4 +31,6 @@ func reset_position() -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		fight_cloud.emitting = true
+		Globals.play_audio("res://assets/sounds/415209__inspectorj__cat-screaming-a.wav")
+		Globals.play_audio("res://assets/sounds/485961__spacejoe__dog-barking-distance-2.wav")
 		tween.kill()

@@ -67,6 +67,7 @@ func play_music(resourse: String):
 	else:
 		music_player = main.get_node("Music")
 	music_player.stream = load(resourse)
+	music_player.volume_db = 0.2 
 	music_player.play()
 
 
