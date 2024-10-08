@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://opsi62a0lqjg"]
 
-[ext_resource type="Texture2D" uid="uid://ciymo6wgw7oht" path="res://assets/Trash Pack Low Poly/Materials/Trashcan2.png" id="1_fxfr8"]
+[ext_resource type="Texture2D" uid="uid://ciymo6wgw7oht" path="res://assets/Trash Pack Low Poly/materials/Trashcan2.png" id="1_fxfr8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tugmq"]
 resource_name = "Trashcan2_Grid"

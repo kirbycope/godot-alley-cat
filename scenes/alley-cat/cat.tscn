@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=4 uid="uid://x5047a8f7och"]
 
-[ext_resource type="Texture2D" uid="uid://d4ihv1e2c5q2g" path="res://assets/Polydactyl/Textures/Tex_Cat_B.png" id="1_47xh5"]
+[ext_resource type="Texture2D" uid="uid://d4ihv1e2c5q2g" path="res://assets/Polydactyl/textures/Tex_Cat_B.png" id="1_47xh5"]
 [ext_resource type="Script" path="res://scenes/alley-cat/cat.gd" id="1_857hh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d8x8s"]

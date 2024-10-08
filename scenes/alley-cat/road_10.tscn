@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://ip407jw2rjuk"]
 
-[ext_resource type="Texture2D" uid="uid://dkp50gl2r8q6h" path="res://assets/CartoonLowPolyCityLite/Textures/Texture_01.png" id="1_xstgw"]
+[ext_resource type="Texture2D" uid="uid://dkp50gl2r8q6h" path="res://assets/CartoonLowPolyCityLite/textures/Texture_01.png" id="1_xstgw"]
 
 [sub_resource type="Shader" id="Shader_jxm57"]
 code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's StandardMaterial3D.
