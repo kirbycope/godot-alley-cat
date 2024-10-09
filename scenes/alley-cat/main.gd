@@ -22,6 +22,9 @@ func _ready() -> void:
 	# Make sure the game is unpaused
 	Globals.game_paused = false
 
+	# Set the flag to match the scene's camera
+	Globals.fixed_camera = true
+
 
 # Start the game, if not started.
 func start() -> void:
