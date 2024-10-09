@@ -46,6 +46,12 @@ func reset_dog_position() -> void:
 
 
 func start_attack_timer() -> void:
+	# Lock the player's movement
+	Globals.movement_locked = true
+	# Hide the cat
+	Globals.get_player().visible = false
+	# Hide the dog
+	$Lowpoly_JR_Terrier_RM.visible = false
 	# Create a Timer instance
 	var timer = Timer.new()
 	timer.wait_time = 2.0
@@ -60,5 +66,10 @@ func start_attack_timer() -> void:
 
 # Signal callback function
 func _on_timer_timeout():
+	Globals.movement_locked = false	
+	# Show the cat
+	Globals.get_player().visible = true
+	# Show the dog
+	$Lowpoly_JR_Terrier_RM.visible = true
 	reset_cat_position()
 	reset_dog_position()

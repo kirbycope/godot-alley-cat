@@ -217,8 +217,8 @@ func _physics_process(delta) -> void:
 	# Set the player's idle animation, as needed
 	set_player_idle_animation()
 
-	# If the game is not paused...
-	if !Globals.game_paused:
+	# If the game is not paused and the player movement is not locked
+	if !Globals.game_paused and !Globals.movement_locked:
 
 		# set animation and velocity based on player action and position
 		mangage_state()

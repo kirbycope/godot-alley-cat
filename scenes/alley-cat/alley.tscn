@@ -332,4 +332,4 @@ script = ExtResource("10_00vhm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 
 [node name="JackRussellTerrier" parent="." instance=ExtResource("14_kp6o8")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.8, 0.0795451, -12)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.5, 0.08, -11.8)
