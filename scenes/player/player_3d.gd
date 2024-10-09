@@ -1090,7 +1090,7 @@ func update_velocity(delta: float) -> void:
 					if player_current_speed > (player_running_speed - (player_running_speed - player_walking_speed) * 0.25):
 						# Play the walking "move" animation
 						if animation_player.current_animation != running_in_place:
-							animation_player.play(running_in_place)
+							animation_player.play(running_in_place, 1.5)
 					else:
 						# Play the walking "move" animation
 						if animation_player.current_animation != walking_in_place:
