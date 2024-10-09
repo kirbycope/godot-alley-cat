@@ -10,6 +10,7 @@ const flying_fast = "flying_fast"
 const hanging_idle = "hanging_idle"
 const kicking_low_left = "kicking_low_left"
 const kicking_low_right = "kicking_low_right"
+const jumping = "Jump"
 const punching_high_left = "punching_high_left"
 const punching_high_right = "punching_high_right"
 const punching_low_left = "punching_low_left"
@@ -235,8 +236,8 @@ func _physics_process(delta) -> void:
 		# Handle player movement
 		update_velocity(delta)
 
-		# Check if the animation player is unlocked
-		if !is_animation_locked:
+		# Check if the animation player is unlocked and the player's motion is unlocked
+		if !is_animation_locked and !Globals.movement_locked:
 			# Move player
 			move_and_slide()
 
@@ -525,7 +526,6 @@ func mangage_state() -> void:
 			# Flag the player as no longer "climbing"
 			is_climbing = false
 
-
 	# Check if player is on a floor
 	if is_on_floor():
 
@@ -551,7 +551,7 @@ func mangage_state() -> void:
 			is_double_jumping = false
 			# Flag the player as "jumping"
 			is_jumping = true
-			# play the jump animation
+			# Play the jump animation
 			animation_player.play("Jump", -1, 2.0, false)
 	
 	# The player should not be on a floor and not flying
@@ -608,6 +608,7 @@ func move_camera():
 		# Adjust the camera mount position to match the bone's relative position (adjusting for $Visuals/AuxScene scaling)
 		#camera_mount.position = Vector3(-bone_pose.origin.x * 0.01, bone_pose.origin.y * 0.01, (-bone_pose.origin.z * 0.01) - 0.165)
 		pass
+
 
 ## Sets the player's idle animation based on status.
 func set_player_idle_animation() -> void:
