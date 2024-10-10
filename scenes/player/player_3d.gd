@@ -7,7 +7,7 @@ const idle = "Idle_A"
 const falling_idle = "falling_idle"
 const flying = "flying"
 const flying_fast = "flying_fast"
-const hanging_idle = "hanging_idle"
+const hanging_idle = "Hang"
 const kicking_low_left = "kicking_low_left"
 const kicking_low_right = "kicking_low_right"
 const jumping = "Jump"
@@ -326,29 +326,34 @@ func check_punch_collision() -> void:
 
 ## Check the eyeline for a ledge to grab.
 func check_top_edge_collision() -> void:
-	if !raycast_top.is_colliding() and raycast_high.is_colliding() and !is_climbing:
-		# Check if the current animation is not a "hanging" one
-		if animation_player.current_animation != hanging_idle:
-			# Play the idle "Hanging" animation
-			animation_player.play(hanging_idle)
-		# Adjust for the animation's player position
-		var point = raycast_high.get_collision_point()
-		# Determine the direction away from the wall
-		var offset_direction = (position - point).normalized()
-		# Offset the player by half the width away from the wall
-		position = Vector3(point.x + offset_direction.x * 0.2, position.y - 0.45, point.z + offset_direction.z * 0.2)
-		# Flag the animation player as locked
-		is_animation_locked = true
-		# Flag the player as "hanging" (from a ledge)
-		is_hanging = true
-		# Flag the player as not jumping
-		is_jumping = false
-		# Reset velocity to prevent any movement
-		velocity = Vector3.ZERO
-		# Delay execution
-		await get_tree().create_timer(0.2).timeout
-		# Flag the animation player no longer locked
-		is_animation_locked = false
+	# Check if the player is colliding and not yet climbing
+	if raycast_jumptarget.is_colliding() and !is_climbing:
+		# Get the collision Node
+		var collider = raycast_high.get_collider()
+		# Ensure the collision is a ledge to climb
+		if collider!= null and collider.is_in_group("Ledge"):
+			# Check if the current animation is not a "hanging" one
+			if animation_player.current_animation != hanging_idle:
+				# Play the idle "Hanging" animation
+				animation_player.play(hanging_idle)
+			# Adjust for the animation's player position
+			var point = raycast_high.get_collision_point()
+			# Determine the direction away from the wall
+			var offset_direction = (position - point).normalized()
+			# Offset the player by half the width away from the wall
+			position = Vector3(point.x + offset_direction.x * 0.2, position.y + 0.1, point.z + offset_direction.z * 0.2)
+			# Flag the animation player as locked
+			is_animation_locked = true
+			# Flag the player as "hanging" (from a ledge)
+			is_hanging = true
+			# Flag the player as not jumping
+			is_jumping = false
+			# Reset velocity to prevent any movement
+			velocity = Vector3.ZERO
+			# Delay execution
+			await get_tree().create_timer(0.2).timeout
+			# Flag the animation player no longer locked
+			is_animation_locked = false
 
 
 ## Rotate camera using the right-analog stick.
