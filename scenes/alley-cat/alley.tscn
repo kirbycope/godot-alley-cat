@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://4k88gc8ltwq8"]
+[gd_scene load_steps=24 format=3 uid="uid://4k88gc8ltwq8"]
 
 [ext_resource type="Script" path="res://scenes/alley-cat/alley.gd" id="1_3viqq"]
 [ext_resource type="PackedScene" uid="uid://b588ayt8gc3wk" path="res://scenes/player/player_3d.tscn" id="2_rbv1v"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scenes/alley-cat/path_follow_3d.gd" id="10_00vhm"]
 [ext_resource type="PackedScene" uid="uid://bcb07a1lldcvf" path="res://scenes/alley-cat/clothes_rope_01.tscn" id="10_uejnh"]
 [ext_resource type="PackedScene" uid="uid://b44r78ilddmln" path="res://scenes/alley-cat/clothes_rope_02.tscn" id="11_2cykv"]
+[ext_resource type="PackedScene" uid="uid://cybw11r5kg3wf" path="res://scenes/alley-cat/mouse.tscn" id="12_0h315"]
 [ext_resource type="PackedScene" uid="uid://cvy2gntva12jl" path="res://scenes/alley-cat/jack_russell_terrier.tscn" id="14_kp6o8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y5aho"]
@@ -51,7 +52,7 @@ point_count = 5
 script = ExtResource("1_3viqq")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.12, 1.2, -13.8)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.12, 1.25, -13.8)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -274,6 +275,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1761, 0, 0)
 [node name="ClothesRope06" parent="ClothesRope1" instance=ExtResource("11_2cykv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.74395, 0, 0)
 
+[node name="Mouse" parent="ClothesRope1" instance=ExtResource("12_0h315")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 0)
+
 [node name="ClothesRope2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82062, 2.38921, -11.2)
 
@@ -295,6 +299,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.744, 0, 0)
 [node name="ClothesRope06" parent="ClothesRope2" instance=ExtResource("11_2cykv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.176, 0, 0)
 
+[node name="Mouse" parent="ClothesRope2" instance=ExtResource("12_0h315")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 0)
+
 [node name="ClothesRope3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82062, 3.13106, -11.2)
 
@@ -315,6 +322,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1761, 0, 0)
 
 [node name="ClothesRope06" parent="ClothesRope3" instance=ExtResource("11_2cykv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.74395, 0, 0)
+
+[node name="Mouse" parent="ClothesRope3" instance=ExtResource("12_0h315")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0803636, 0.4, -10.0902)
