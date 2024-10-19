@@ -15,7 +15,7 @@ var client:
 ## Flag for if the app was opened in Debug mode.
 var debug_mode: bool = OS.is_debug_build()
 
-## Flag for if the current scene has a fixed camera.
+## Flag for if the game has a fixed camera.
 var fixed_camera: bool = false
 
 ## Flag for if the game is Paused.
@@ -37,18 +37,20 @@ var time_stamp: String:
 		return return_value + "Z" if time_stamp_utc else return_value
 
 
-## Get the "Player3D" or "Player2D".
-func get_player():
-	var player = get_parent().find_child("Player3D", true, false)
-	return player
-
-
 ## Gets the scene by the path's concatenated name.
 func get_node_by_path_name(concatenated_name: String):
 	var children = get_tree().root.get_children()
 	for child in children:
 		if child.get_path().get_concatenated_names() == concatenated_name:
 			return child
+
+
+## Get the "Player3D" or "Player2D".
+func get_player():
+	var player = get_parent().find_child("Player3D", true, false)
+	if player == null:
+		player = get_parent().find_child("Player2D", true, false)
+	return player
 
 
 ## Plays the given audio file using an ephemeral audio player.
@@ -70,7 +72,7 @@ func play_audio(resourse: String):
 	sfx_player.play()
 
 
-## Plays the given resource on the $Music player.
+## Plays the given resource on the Music player.
 func play_music(resourse: String):
 	var music_player = null
 	# Get sound player if app loaded from $Client
@@ -79,11 +81,10 @@ func play_music(resourse: String):
 	else:
 		music_player = main.get_node("Music")
 	music_player.stream = load(resourse)
-	music_player.volume_db = 0.2 
 	music_player.play()
 
 
-## Plays the given resource on the $Sound player.
+## Plays the given resource on the Sound player.
 func play_sound(resourse: String):
 	var sound_player = null
 	# Get sound player if app loaded from $Client
