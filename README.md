@@ -6,6 +6,9 @@ Alley Cat remade for the Godot Game Engine.
 ## Project Setup
 This project serves as an example of how to join a few concepts I have been working on; [Addons](https://docs.godotengine.org/en/stable/tutorials/plugins/index.html), [Game Packs](https://docs.godotengine.org/en/stable/tutorials/export/exporting_pcks.html), and [Compatability Builds](https://docs.godotengine.org/en/stable/contributing/development/core_and_modules/internal_rendering_architecture.html#compatibility).
 
+<details>
+<summary>Using Addons</summary>
+
 ### Addons
 This project uses the [godot-3d-player-controller](https://github.com/kirbycope/godot-3d-player-controller). That addon requires an auto-load, [Globals.gd](https://github.com/kirbycope/godot-3d-player-controller/blob/main/scenes/globals.gd).
 
@@ -16,6 +19,8 @@ This project uses the [godot-3d-player-controller](https://github.com/kirbycope/
 1. Open the "Git Bash" terminal
 1. Run `bash ci/install-3d-player-controller.sh`
     - This script will download the [3d_player_controller](/addons/3d_player_controller) folder from _this_ repo and then cleanup the `.git` files/folders.
+
+</details>
 
 <details>
 <summary>Export Game as Pack</summary>
