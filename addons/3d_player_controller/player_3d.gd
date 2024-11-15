@@ -5,11 +5,12 @@ const crouching_idle = "crouching_idle"
 const crawling_in_place = "crawling_in_place"
 const idle = "idle"
 const falling_idle = "falling_idle"
-const flying = "flying"
+const flying = "flying_in_place"
 const flying_fast = "flying_fast"
 const hanging_idle = "hanging_idle"
 const kicking_low_left = "kicking_low_left"
 const kicking_low_right = "kicking_low_right"
+const jumping = falling_idle #"jumping"
 const punching_high_left = "punching_high_left"
 const punching_high_right = "punching_high_right"
 const punching_low_left = "punching_low_left"
@@ -30,6 +31,7 @@ var is_crouching: bool = false
 var is_double_jumping: bool = false
 var is_flying: bool = false
 var is_hanging: bool = false
+var is_holding: bool = false
 var is_jumping: bool = false
 var is_kicking_left: bool = false
 var is_kicking_right: bool = false
@@ -65,7 +67,9 @@ var timer_jump: float = 0.0
 @onready var animation_player = $Visuals/AuxScene/AnimationPlayer
 @onready var camera_mount = $CameraMount
 @onready var camera = $CameraMount/Camera3D
+@onready var item_mount = $ItemMount
 @onready var player_skeleton = $Visuals/AuxScene/Node/Skeleton3D
+@onready var raycast_lookat = $CameraMount/Camera3D/RayCast3D
 @onready var raycast_jumptarget = $Visuals/RayCast3D_JumpTarget
 @onready var raycast_top = $Visuals/RayCast3D_InFrontPlayer_Top
 @onready var raycast_high = $Visuals/RayCast3D_InFrontPlayer_High
@@ -99,8 +103,8 @@ func _input(event) -> void:
 	# If the game is not paused...
 	if !Globals.game_paused:
 
-		# Check for mouse motion
-		if event is InputEventMouseMotion:
+		# Check for mouse motion and the camera is not locked
+		if event is InputEventMouseMotion and !Globals.fixed_camera:
 			# Rotate camera based on mouse movement
 			camera_rotate_by_mouse(event)
 
@@ -175,6 +179,36 @@ func _input(event) -> void:
 				# Check the punch hits something
 				check_punch_collision()
 
+			# [use] button _pressed_ (while holding something)
+			if event.is_action_pressed("use") and is_holding:
+				# Get the nodes in the "held" group
+				var held_nodes = get_tree().get_nodes_in_group("held")
+				# Check if nodes were found in the group
+				if not held_nodes.is_empty():
+					# Get the first node in the "held" group
+					var held_node = held_nodes[0]
+					# Flag the node as no longer "held"
+					held_node.remove_from_group("held")
+					# Flag the player as "holding" something
+					is_holding = false
+					# Input handled, move on
+					return
+
+			# [use] button _pressed_ (while not holding something)
+			if event.is_action_pressed("use") and !is_holding:
+				# Check if the player is looking at something
+				if raycast_lookat.is_colliding():
+					# Get the object the RayCast is colliding with
+					var collider = raycast_lookat.get_collider()
+					# Check if the collider is a RigidBody3D
+					if collider is RigidBody3D:
+						# Flag the RigidBody3D as being "held"
+						collider.add_to_group("held")
+						# Flag the player as "holding" something
+						is_holding = true
+					# Input handled, move on
+						return
+
 		# [select] button _pressed_
 		if event.is_action_pressed("select"):
 			if perspective == 0:
@@ -226,8 +260,8 @@ func _physics_process(delta) -> void:
 		var look_actions = ["look_down", "look_up", "look_left", "look_right"]
 		# Check each "look" action in the list
 		for action in look_actions:
-			# Check if the action is _pressesd_
-			if Input.is_action_pressed(action):
+			# Check if the action is _pressesd_ and the camera is not locked
+			if Input.is_action_pressed(action) and !Globals.fixed_camera:
 
 				# Rotate camera based on controller movement
 				camera_rotate_by_controller(delta)
@@ -235,13 +269,24 @@ func _physics_process(delta) -> void:
 		# Handle player movement
 		update_velocity(delta)
 
-		# Check if the animation player is unlocked
-		if !is_animation_locked:
+		# Check if the animation player is unlocked and the player's motion is unlocked
+		if !is_animation_locked and !Globals.movement_locked:
 			# Move player
 			move_and_slide()
 
 	# Move the camera to player
 	move_camera()
+
+	# Check if the player is holding something
+	if is_holding:
+		# Get the nodes in the "held" group
+		var held_nodes = get_tree().get_nodes_in_group("held")
+		# Check if nodes were found in the group
+		if not held_nodes.is_empty():
+			# Get the first node in the "held" group
+			var held_node = held_nodes[0]
+			# Move the first node to the holding position
+			held_node.global_transform = item_mount.global_transform
 
 
 ## Check if the kick hits anything.
@@ -525,7 +570,6 @@ func mangage_state() -> void:
 			# Flag the player as no longer "climbing"
 			is_climbing = false
 
-
 	# Check if player is on a floor
 	if is_on_floor():
 
@@ -551,6 +595,8 @@ func mangage_state() -> void:
 			is_double_jumping = false
 			# Flag the player as "jumping"
 			is_jumping = true
+			# Play the "jumping" animation
+			animation_player.play(jumping)
 	
 	# The player should not be on a floor and not flying
 	else:
@@ -635,7 +681,7 @@ func set_player_idle_animation() -> void:
 		if animation_player.current_animation in animations_flying:
 			# Play the standing "idle" animation
 			animation_player.play(idle)
-	
+
 	# Check if the player is "hanging"
 	if is_hanging:
 		# Check if the current animation is not a hanging one
