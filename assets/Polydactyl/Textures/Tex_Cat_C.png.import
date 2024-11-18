@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cj24ew4lwl3a7"
-path="res://.godot/imported/Tex_Cat_C.png-aa46619437f3f190fe93f2f5a19c7444.ctex"
+path="res://.godot/imported/Tex_Cat_C.png-1021c4390572ce1066dbb37f654f6c69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Polydactyl/textures/Tex_Cat_C.png"
-dest_files=["res://.godot/imported/Tex_Cat_C.png-aa46619437f3f190fe93f2f5a19c7444.ctex"]
+source_file="res://assets/Polydactyl/Textures/Tex_Cat_C.png"
+dest_files=["res://.godot/imported/Tex_Cat_C.png-1021c4390572ce1066dbb37f654f6c69.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ciymo6wgw7oht"
-path.s3tc="res://.godot/imported/Trashcan2.png-88f5ccecb50afacded85e1ca8520d433.s3tc.ctex"
+path.s3tc="res://.godot/imported/Trashcan2.png-93c7f4339e4f2f29a704f7d8803c2fd2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Trash Pack Low Poly/materials/Trashcan2.png"
-dest_files=["res://.godot/imported/Trashcan2.png-88f5ccecb50afacded85e1ca8520d433.s3tc.ctex"]
+source_file="res://assets/Trash Pack Low Poly/Materials/Trashcan2.png"
+dest_files=["res://.godot/imported/Trashcan2.png-93c7f4339e4f2f29a704f7d8803c2fd2.s3tc.ctex"]
 
 [params]
 
