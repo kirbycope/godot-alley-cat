@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=4 uid="uid://b588ayt8gc3wk"]
 
-[ext_resource type="Texture2D" uid="uid://d4ihv1e2c5q2g" path="res://assets/Polydactyl/textures/Tex_Cat_B.png" id="1_6pfih"]
+[ext_resource type="Texture2D" uid="uid://d4ihv1e2c5q2g" path="res://assets/Polydactyl/Textures/Tex_Cat_B.png" id="1_6pfih"]
 [ext_resource type="Script" path="res://scenes/player/player_3d.gd" id="1_j5sej"]
 [ext_resource type="Script" path="res://addons/3d_player_controller/virtual_controller_3d.gd" id="2_kx80m"]
 [ext_resource type="Texture2D" uid="uid://b531o75la4vme" path="res://assets/freepik/paw.svg" id="3_k10go"]
@@ -6035,7 +6035,7 @@ _data = {
 radius = 1.0
 height = 4.0
 
-[node name="Player3D" type="CharacterBody3D" groups=["player"]]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_j5sej")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

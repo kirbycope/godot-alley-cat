@@ -78,7 +78,7 @@ mesh = SubResource("PlaneMesh_tpjn0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
 shape = SubResource("BoxShape3D_5hadr")
 
-[node name="Player3D" parent="." instance=ExtResource("2_rbv1v")]
+[node name="Player" parent="." instance=ExtResource("2_rbv1v")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.1, -12.0753)
 
 [node name="TrashCan1" parent="." instance=ExtResource("3_qb571")]
